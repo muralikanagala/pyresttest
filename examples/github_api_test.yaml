@@ -2,22 +2,30 @@
 ---
 - config:
   - testset: "Simple github.com API Test"
+- benchmark:
+    - name: "Test with successful validations"
+    - 'benchmark_runs': '1'
+    - url: "/users/octocat/orgs"
+    - metrics:
+        - total_time
+        - total_time: total
+        - total_time: mean
+- benchmark: # create entity
+    - name: "Search person"
+    - url: "/search/users?q=jewzaam"
+    - 'benchmark_runs': '1'
+    - metrics:
+        - total_time
+        - total_time: total
+        - total_time: mean
+
 - test:
-  - name: "Test with successful validations"
-  - url: "/search/users?q=jewzaam"
-  - group: "Successful"
-  - validators: # operator is applied as: <actual> <operator> <expected>
-     - compare: {jsonpath_mini: "total_count",     comparator: "eq",     expected: 1}
-     - compare: {jsonpath_mini: "total_count",     comparator: "ge",     expected: 1}
-     - compare: {jsonpath_mini: "total_count",     comparator: "gt",     expected: 0}
-     - compare: {jsonpath_mini: "total_count",     comparator: "eq",     expected: 1} # default operator of "eq"
-     - compare: {jsonpath_mini: "items",           comparator: "count_eq",  expected: 1}
-     - compare: {jsonpath_mini: "items.0.login",   comparator: "eq",     expected: "jewzaam"}
-     - compare: {jsonpath_mini: "items.0.id",      comparator: "gt",     expected: 0}
-     - extract_test: {jsonpath_mini: "does_not_exist",  test: "not_exists"}
-- test:
-  - name: "Test with validations that will fail"
-  - url: "/search/users?q=svanoort"
-  - group: "Failure"
-  - validators:
-     - compare: {jsonpath_mini: "total_count", comparator: "eq", expected: 0}
+    - name: "Test with successful validations"
+    - url: "/users/octocat/orgs"
+    
+#- test:
+#  - name: "Test with validations that will fail"
+#  - url: "/search/users?q=svanoort"
+#  - group: "Failure"
+#  - validators:
+#     - compare: {jsonpath_mini: "total_count", comparator: "eq", expected: 0}

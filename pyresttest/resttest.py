@@ -661,6 +661,7 @@ def run_testsets(testsets):
 
             result = run_test(test, test_config=myconfig, context=context, curl_handle=curl_handle)
             result.body = None  # Remove the body, save some memory!
+            print(result)
 
             if not result.passed:  # Print failure, increase failure counts for that test group
                 # Use result test URL to allow for templating
@@ -728,7 +729,6 @@ def run_testsets(testsets):
 
         passfail = {True: u'SUCCEEDED: ', False: u'FAILED: '}
         output_string = "Test Group {0} {1}: {2}/{3} Tests Passed!".format(group, passfail[failures == 0], str(test_count - failures), str(test_count)) 
-        
         if myconfig.skip_term_colors:
             print(output_string)    
         else:
@@ -859,7 +859,6 @@ def main(args):
 
     # Execute all testsets
     failures = run_testsets(tests)
-
     sys.exit(failures)
 
 

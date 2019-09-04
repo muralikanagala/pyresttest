@@ -1,0 +1,156 @@
+[
+{
+    "body": null,
+    "response_headers": [
+        [
+            "date",
+            "Wed, 04 Sep 2019 15:45:03 GMT"
+        ],
+        [
+            "content-type",
+            "application/json; charset=utf-8"
+        ],
+        [
+            "content-length",
+            "2"
+        ],
+        [
+            "connection",
+            "close"
+        ],
+        [
+            "server",
+            "GitHub.com"
+        ],
+        [
+            "status",
+            "200 OK"
+        ],
+        [
+            "x-ratelimit-limit",
+            "60"
+        ],
+        [
+            "x-ratelimit-remaining",
+            "47"
+        ],
+        [
+            "x-ratelimit-reset",
+            "1567615450"
+        ],
+        [
+            "cache-control",
+            "public, max-age=60, s-maxage=60"
+        ],
+        [
+            "vary",
+            "Accept"
+        ],
+        [
+            "etag",
+            "\"98f0c1b396a4e5d54f4d5fe561d54b44\""
+        ],
+        [
+            "x-github-media-type",
+            "github.v3; format=json"
+        ],
+        [
+            "access-control-expose-headers",
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type"
+        ],
+        [
+            "access-control-allow-origin",
+            "*"
+        ],
+        [
+            "strict-transport-security",
+            "max-age=31536000; includeSubdomains; preload"
+        ],
+        [
+            "x-frame-options",
+            "deny"
+        ],
+        [
+            "x-content-type-options",
+            "nosniff"
+        ],
+        [
+            "x-xss-protection",
+            "1; mode=block"
+        ],
+        [
+            "referrer-policy",
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+        ],
+        [
+            "content-security-policy",
+            "default-src 'none'"
+        ],
+        [
+            "vary",
+            "Accept-Encoding"
+        ],
+        [
+            "x-github-request-id",
+            "942B:0F4D:4133FF:5FDF67:5D6FDBFE"
+        ]
+    ],
+    "response_code": 200,
+    "passed": true,
+    "test": {
+        "expected_status": [
+            200
+        ],
+        "_headers": {},
+        "name": "Test with successful validations",
+        "_url": "https://api.github.com/users/octocat/orgs",
+        "templated": {}
+    },
+    "failures": []
+},
+{
+    "failures": 0,
+    "aggregates": [
+        [
+            "total_time",
+            "total",
+            0.153396
+        ],
+        [
+            "total_time",
+            "mean",
+            0.153396
+        ]
+    ],
+    "group": "Default",
+    "results": {
+        "total_time": [
+            0.153396
+        ]
+    },
+    "name": "Test with successful validations"
+},
+{
+    "failures": 0,
+    "aggregates": [
+        [
+            "total_time",
+            "total",
+            0.181484
+        ],
+        [
+            "total_time",
+            "mean",
+            0.181484
+        ]
+    ],
+    "group": "Default",
+    "results": {
+        "total_time": [
+            0.181484
+        ]
+    },
+    "name": "Search person"
+}
+
+]
